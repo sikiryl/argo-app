@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: git@github.com:sikiryl/argo-app.git
     targetRevision: main
-    path: deployments
+    path: app
     directory:
       recurse: true
   destination:
