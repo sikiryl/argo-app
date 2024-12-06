@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k8s-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:sikiryl/k8s-app.git
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
