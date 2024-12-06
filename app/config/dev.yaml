@@ -1,16 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mz
+  name: k8s-dev-config
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: git@github.com:sikiryl/argo-app.git
+    repoURL: git@github.com:sikiryl/k8s-nonprod-config.git
     targetRevision: main
-    path: deployments
-    directory:
-      recurse: true
+    path: dev
   destination:
     server: https://kubernetes.default.svc
     namespace: default
