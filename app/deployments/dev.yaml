@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: git@github.com:sikiryl/k8s-app.git
     targetRevision: main
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-    path: dev
   syncPolicy:
     automated:
       prune: true
